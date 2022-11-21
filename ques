@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define max 10
+int main()
+{
+    int n,m,k;
+  
+    printf("enter the degree1");
+    scanf("%d",&n);
+    n+=1;
+    int poly1[n];
+    printf("enter the coeffecients: ");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&poly1[i]);
+    }
+    printf("enter the degree2 ");
+    scanf("%d",&m);
+    m+=1;
+    int poly2[m];
+    printf("enter the coeffecients: ");
+    for(int i=0;i<m;i++)
+    {
+        scanf("%d",&poly2[i]);
+    }
+    k=n+m-1;
+    int poly3[k];
+    for(int i=0;i<k;i++)
+    {
+    	poly3[i]=0;
+	}
+    for(int i=0;i<n;i++)
+    {
+    	for(int j;j<m;j++)
+    	{
+    		poly3[i+j]=poly3[i+j]+poly1[i]*poly2[j];
+		}
+	}
+	printf("Resultant polynomial:\n");
+    for(int i=0;i<k;i++)
+    {
+	
+	  printf("%d x^%d ",poly3[i],i);
+	}
+
+    return 0;
+
+}
